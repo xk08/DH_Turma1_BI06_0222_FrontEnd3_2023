@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+    background-color: #dadada;
+    font-family: "Roboto", sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 2rem;
+    color: #a31b98;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: chocolate;
+}

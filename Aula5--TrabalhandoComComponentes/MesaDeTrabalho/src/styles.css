@@ -1,0 +1,22 @@
+/* Estilo global para todos os componentes de "App.jsx" */
+* {
+  padding: 0;
+  margin: 0;
+  background-color: #5d5d5d;
+}
+
+h2 {
+  font-size: x-large;
+}
+
+h3 {
+  font-size: larger;
+}
+
+img {
+  width: 50%;
+}
+
+ul {
+  list-style-type: none;
+}

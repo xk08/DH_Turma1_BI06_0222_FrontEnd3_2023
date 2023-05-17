@@ -1,0 +1,21 @@
+.div {
+    margin: 1%;
+    padding: 1%;
+    border: 2px solid #a31b98;
+}
+
+.h3 {
+    margin-top: 2%;
+}
+
+
+li {
+    list-style: none
+}
+
+li:before {
+    content: "•";
+    color: #a31b98;
+    display: inline-block;
+    width: 1em;
+}
