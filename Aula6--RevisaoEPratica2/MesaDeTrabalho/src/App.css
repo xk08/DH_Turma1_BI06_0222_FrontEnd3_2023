@@ -1,0 +1,14 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* CSS Normal */
+h1, h2, h3, p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+  background-color: gainsboro;
+}
