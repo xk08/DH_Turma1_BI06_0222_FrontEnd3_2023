@@ -3,27 +3,32 @@ import ctdEstrutura from "./ctd_estrutura";
 import ItemComponent from "./components/ItemComponent";
 import ButtonComponent from "./components/ButtonComponent";
 
-import ReactDOM from 'react-dom/client';
+import ButtonStateComponent from "./components/ButtonStateComponent";
 
-let arrayFiltered = [];
-
-const executefilterAndDefineArrayData = (year) => {
-  arrayFiltered = ctdEstrutura.filter(item => item.ano.match(year));
-  console.log("Clicou no botão");
-  console.log(arrayFiltered);
-
-  /// Não recomendado utilizar assim, necessário adicionar um Hook
-  ReactDOM.createRoot(document.getElementById('root')).render(
-    <App />
-  )
-
-};
+import { useState } from "react";
 
 
 function App() {
 
+  /// Definindo o estado do Array
+  const [arrayFiltered, setArrayFiltered] = useState([]);
+
+  const executefilterAndDefineArrayData = (year) => {
+    const array = ctdEstrutura.filter(item => item.ano.match(year));
+    setArrayFiltered(array); /// Função que atualiza o array (e o estado)
+
+  };
+
   return (
     <div className="container">
+
+      <br />
+      <br />
+
+      <ButtonStateComponent />
+
+      <br />
+      <br />
 
       <h1 className="title">CTD - Jornada do Aluno</h1>
 
@@ -46,7 +51,7 @@ function App() {
 
       {
         arrayFiltered.map((item, index) => {
-          
+
           return <ItemComponent
             key={index}
             {...item}
