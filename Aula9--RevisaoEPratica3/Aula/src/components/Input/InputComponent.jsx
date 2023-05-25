@@ -1,6 +1,6 @@
 import style from "./InputComponent.module.css";
 
-function InputComponent({ label, type, value, fnOnChange }) {
+function InputComponent({ label, type, value, fnOnChange, onKeyUp }) {
     return (
         <div className={style.input}>
             <label>{label ?? "Não informado"}</label>
@@ -9,6 +9,7 @@ function InputComponent({ label, type, value, fnOnChange }) {
                 type={type}
                 value={value}
                 onChange={fnOnChange}
+                onKeyUp={onKeyUp}
             />
         </div>
     );

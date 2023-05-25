@@ -2,6 +2,7 @@ import style from "../Form/FormComponent.module.css";
 import CardComponent from "../Cards/CardComponent";
 import InputComponent from "../Input/InputComponent";
 import CheckboxComponent from "../Checkbox/CheckboxComponent";
+import CardsListComponent from "../Cards/CardsListComponent";
 import { useState } from "react";
 
 function FormComponent() {
@@ -9,27 +10,47 @@ function FormComponent() {
     /// Definindo os estados dos elementos do formulário
     const [pokemonName, setPokemonName] = useState("");
     const [pokemonImageUrl, setPokemonImageUrl] = useState("");
-    const [pokemon, setPokemon] = useState({});
+    // const [pokemon, setPokemon] = useState({});
     const [formIsValid, setFormIsValid] = useState(false);
+
+    const [pokemonList, setPokemonList] = useState([]);
 
     /// Funções que atualizam os estados do formulário
     const handleChangePokemonName = (event) => {
         setPokemonName(event.target.value);
-        formValidator(); /// TODO: Ver outra forma de fazer em tempo real
+        //formValidator();
     }
 
     const handleChangePokemonImageUrl = (event) => {
         setPokemonImageUrl(event.target.value);
-        formValidator();
+        //formValidator();
     }
 
     const handleButtonClick = () => {
-        setPokemon(
+
+        /// Populando o array de pokemon (Atualizando o estado do array)
+
+        /// 1ª forma
+        /* const pokemonListTemp = [...pokemonList];
+        pokemonListTemp.push(
             {
                 name: pokemonName,
                 image: pokemonImageUrl
             }
         )
+        setPokemonList(pokemonListTemp); */
+
+        /// 2ª forma
+        setPokemonList(
+            [
+                ...pokemonList, /// Capturando o estado anterior do array
+                { /// Adicionando o novo elemento
+                    name: pokemonName,
+                    image: pokemonImageUrl
+                }
+            ]
+        )
+
         /// Limpando os valores do input
         setPokemonName("");
         setPokemonImageUrl("");
@@ -38,6 +59,7 @@ function FormComponent() {
 
     /// Função que valida os campos do formulário
     const formValidator = () => {
+
         if (pokemonName.length >= 2 && pokemonImageUrl.length > 0) {
             setFormIsValid(true);
         } else {
@@ -47,11 +69,20 @@ function FormComponent() {
 
     return (
         <>
-            {/* Card com os dados do formulário */}
-            <CardComponent
-                name={pokemon.name}
-                imageUrl={pokemon.image}
-            />
+            <CardsListComponent>
+                {
+                    pokemonList.map(pokemonCard => {
+                        return (
+                            <CardComponent
+                                key={pokemonCard.name}
+                                name={pokemonCard.name}
+                                imageUrl={pokemonCard.image}
+                            />
+                        );
+                    })
+                }
+            </CardsListComponent>
+
 
             {/* Card com os campos do formulário */}
             <div className={style.container}>
@@ -61,6 +92,7 @@ function FormComponent() {
                     type="text"
                     value={pokemonName}
                     fnOnChange={handleChangePokemonName}
+                    onKeyUp={formValidator}
                 />
 
                 <InputComponent
@@ -68,6 +100,7 @@ function FormComponent() {
                     type="url"
                     value={pokemonImageUrl}
                     fnOnChange={handleChangePokemonImageUrl}
+                    onKeyUp={formValidator}
                 />
 
                 <CheckboxComponent />
