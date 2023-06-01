@@ -1,0 +1,6 @@
+.div {
+    background-color: rgb(207, 215, 214);
+    border-radius: 2%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}

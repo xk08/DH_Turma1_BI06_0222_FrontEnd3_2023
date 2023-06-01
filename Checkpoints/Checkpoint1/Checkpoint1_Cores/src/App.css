@@ -1,0 +1,39 @@
+#root {
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.form {
+  background-color: #424040;
+  padding: 3%;
+  border-radius: 3%;
+}
+
+.formInputs {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+small {
+  font-size: large;
+  font-weight: 500;
+  color: #913f3f
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #424040;
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #424040;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #424040;
+}

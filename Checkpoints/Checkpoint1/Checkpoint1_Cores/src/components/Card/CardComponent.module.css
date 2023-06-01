@@ -1,0 +1,17 @@
+.div {
+    background-color: rgb(148, 148, 149); 
+    border-radius: 3%;
+    border: 1px solid whitesmoke;
+    padding: 5%;
+}
+
+.title {
+    font-size: 25pt;
+    color: whitesmoke;
+    font-weight: 500;
+}
+
+.subtitle {
+    font-size: 15pt;
+    color: whitesmoke;
+}

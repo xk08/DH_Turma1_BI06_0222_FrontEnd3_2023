@@ -1,3 +1,10 @@
+/* 
+Digital House Brasil
+  - Front end III (ReactJS)
+  - Possível solução para o Checkpoint I da disciplina 
+  - Prof: Marcos V. Martins
+*/
+
 import './App.css';
 import { useState } from "react";
 
