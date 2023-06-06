@@ -1,0 +1,19 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.div-selects {
+  background-color: rgba(225, 181, 151, 0.864);
+  border-radius: 5%;
+  padding: 3%;
+}
+
+.div-resposta {
+  margin-top: 10px;
+  background-color: rgba(141, 16, 120, 0.314);
+  border-radius: 5%;
+  padding: 3%;
+}
