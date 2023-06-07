@@ -1,0 +1,51 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.div {
+    background-color: rgba(114, 30, 104, 0.587);
+    border-radius: 5%;
+    width: 400px;
+    height: min-content;
+    margin-bottom: 5%;
+    border: 2px solid white;
+}
+
+.img {
+    border-radius: 50%;
+    width: 300px;
+    margin: 5%;
+}
+
+.title {
+    color: rgb(67, 6, 46);
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+.description {
+    color: whitesmoke;
+    font-size: 13pt;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+.details {
+    color: whitesmoke;
+    font-size: 12pt;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.button {
+    margin-top: 2%;
+    margin-bottom: 5%;
+    margin-left: 2%;
+}
+
+h2 {
+    color: rgb(67, 66, 66);
+    font-size: xx-large;
+}
