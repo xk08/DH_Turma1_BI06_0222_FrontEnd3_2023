@@ -1,0 +1,12 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.form {
+  background-color: #ac23833c;
+  padding: 5%;
+  border-radius: 3%;
+}
