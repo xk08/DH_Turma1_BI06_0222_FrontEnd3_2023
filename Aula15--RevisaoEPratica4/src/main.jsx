@@ -14,7 +14,7 @@ createServer({
   seeds(server) {
     server.create("product", {
       id: 1,
-      title: "Brown Perfume",
+      title: "Brown Perfume 2.0",
       description: "Royal_Mirage Sport Brown Perfu...",
       price: 40,
       stock: 52,
