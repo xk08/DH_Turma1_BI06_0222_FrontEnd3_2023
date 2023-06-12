@@ -1,0 +1,33 @@
+#root {
+    max-width: 1280px;
+    margin: auto;
+    text-align: center;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+h2 {
+    color: rgb(56, 55, 55);
+    font-size: xx-large;
+}
+
+h1 {
+    color: #8a6df1;
+    font-size: xx-large;
+}
+
+img {
+    border-radius: 50%;
+    width: 50%;
+}
+
+th {
+    color: rgb(56, 55, 55);
+}
+
+button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

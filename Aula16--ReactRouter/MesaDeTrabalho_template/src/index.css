@@ -1,0 +1,103 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #141414;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+nav{  
+  display: flex;
+  width: 90vw;
+  padding: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logo{
+  width: 80px;
+}
+
+nav > a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #fff;
+}
+nav > a:hover {
+  color: rgb(105, 103, 103);
+}
+
+h1{
+  text-align: center;
+  cursor: pointer;
+  transition: all ease 0.5s;
+}
+
+h1:hover{
+  color: rgb(255, 198, 75);
+}
+
+.card{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border: 1.5px solid white;
+  width: 300px;
+  height: auto;
+  margin: 1rem;
+  transition: all ease 0.3s;
+  cursor: pointer;
+  padding: 0.5rem;
+  
+}
+
+.card:hover{
+  box-shadow: 0px 0px 45px -10px rgba(255, 198, 75, 0.3);
+  border: 0.2px solid white;
+
+}
+
+.card > a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.card > img{
+  height: 200px;
+}
+
+.grid{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: #fff;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}

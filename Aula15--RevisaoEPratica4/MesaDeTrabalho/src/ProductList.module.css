@@ -1,0 +1,64 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.div {
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgba(114, 30, 104, 0.587);
+    border-radius: 5%;
+    margin: 1%;
+    border: 2px solid white;
+    width: 350px;
+    height: auto;
+    transition: all ease 0.3s;
+    cursor: pointer;
+    padding: 0.1rem;
+}
+
+.img {
+    border-radius: 50%;
+    width: 50%;
+    margin: 5%;
+}
+
+.title {
+    color: rgb(67, 6, 46);
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+.description {
+    color: whitesmoke;
+    font-size: 13pt;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+.details {
+    color: whitesmoke;
+    font-size: 12pt;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.button {
+    margin-top: 2%;
+    margin-bottom: 5%;
+    margin-left: 2%;
+}
+
+h2 {
+    color: rgb(67, 66, 66);
+    font-size: xx-large;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
