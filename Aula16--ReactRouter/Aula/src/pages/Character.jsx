@@ -2,11 +2,16 @@ import { useEffect, useState } from 'react';
 import axios from "axios";
 import apiBaseUrl from "../api";
 
+import { useParams, useNavigate } from 'react-router-dom';
+
 const Character = () => {
 
   const [character, setCharacter] = useState(undefined);
 
-  const characterNameParam = "rick";
+  const params = useParams();
+  const navigate = useNavigate();
+
+  const characterNameParam = params.name;
 
   const getCharacter = async () => {
     const res = await axios(`${apiBaseUrl}/character/?name=${characterNameParam}`)
@@ -40,9 +45,9 @@ const Character = () => {
             <img src={character.image} />
 
             <br />
-            <button onClick={() => { }}>{"< voltar"}</button>
+            <button onClick={() => navigate(-1)}>{"< voltar"}</button>
             <br />
-            <button onClick={() => { }}>Votar ao início</button>
+            <button onClick={() => navigate("/")}>Votar ao início</button>
 
           </div>
           : <h2>O personagem {characterNameParam} não foi encontrado</h2>

@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 
+import NavBar from "./NavBar";
+
 function Header() {
 
     useEffect(() => {
@@ -23,6 +25,8 @@ function Header() {
                     width: "90%",
                     border: "3px solid #FFFFFF"
                 }} />
+
+            <NavBar />
 
         </div>
 

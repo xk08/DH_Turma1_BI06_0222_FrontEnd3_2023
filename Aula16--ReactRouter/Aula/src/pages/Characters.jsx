@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import axios from "axios";
 import apiBaseUrl from "../api";
+import { Link } from "react-router-dom";
 
 const Characters = () => {
 
@@ -34,6 +35,7 @@ const Characters = () => {
                         <thead>
                             <tr>
                                 <th>Name</th>
+                                <th>Action</th>
                                 <th>Status</th>
                                 <th>Species</th>
                             </tr>
@@ -47,6 +49,9 @@ const Characters = () => {
                                         key={ch.id}
                                     >
                                         <td>{ch.name}</td>
+                                        <td>
+                                            <Link to={ch.name}>Ver mais</Link>
+                                        </td>
                                         <td>{ch.status}</td>
                                         <td>{ch.species}</td>
                                     </tr>
