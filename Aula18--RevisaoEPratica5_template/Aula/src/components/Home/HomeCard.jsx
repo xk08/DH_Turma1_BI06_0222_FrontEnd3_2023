@@ -1,4 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 function HomeCard({ hotel }) {
+
+    const navigate = useNavigate();
+
+    const handleRedirectToDetailsPage = (id) => {
+        navigate(`/details/${id}`)
+    }
 
     return (
 
@@ -36,8 +44,7 @@ function HomeCard({ hotel }) {
             <div className="description">{hotel.city}</div>
             <div className="description-stars">{hotel.stars} estrelas</div>
             <button
-                /* Ao clicar, fazer a página direcionar para a rota de detalhes */
-                onClick={() => { }}
+                onClick={() => handleRedirectToDetailsPage(hotel.id)}
                 style={{ margin: "2%" }}>Ver mais
             </button>
         </div>
