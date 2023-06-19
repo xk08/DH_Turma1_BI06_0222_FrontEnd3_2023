@@ -1,0 +1,90 @@
+#root {
+    max-width: 1280px;
+    margin: auto;
+    text-align: center;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+h2 {
+    color: rgb(56, 55, 55);
+    font-size: xx-large;
+}
+
+h1 {
+    color: #8a6df1;
+    font-size: xx-large;
+}
+
+img {
+    border-radius: 50%;
+    width: 50%;
+}
+
+th {
+    color: rgb(56, 55, 55);
+}
+
+button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.linkStyle {
+    color: rgb(56, 55, 55);
+    font-size: large;
+}
+
+/* ########### Tema Claro ########### */
+.bodyThemeLight {
+    background-color: whitesmoke;
+}
+
+.h2ThemeLight h2 {
+    color: rgb(56, 55, 55);
+}
+
+.thThemeLight {
+    color: rgb(56, 55, 55);
+}
+
+.trThemeLight {
+    color: #213547;
+}
+
+.btnThemeLight button {
+    background-color: #8a6df1;
+    color: whitesmoke;
+}
+
+.navThemeLight .linkStyle {
+    color: rgb(56, 55, 55);
+}
+
+/* ########### Tema Escuro ########### */
+.bodyThemeDark {
+    background-color: rgb(18, 17, 17);
+}
+
+.h2ThemeDark h2 {
+    color: whitesmoke;
+}
+
+.thThemeDark th {
+    color: whitesmoke;
+}
+
+.trThemeDark {
+    color: whitesmoke;
+}
+
+.btnThemeDark button {
+    background-color: #39287a;
+    color: whitesmoke;
+}
+
+.navThemeDark .linkStyle {
+    color: whitesmoke;
+}
