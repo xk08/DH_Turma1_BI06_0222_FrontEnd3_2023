@@ -1,0 +1,43 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+button {
+  margin: 5px;
+}
+
+input {
+  font-size: large;
+  background-color: #998bd2;
+  color: whitesmoke;
+  height: 35px;
+  border-radius: 2%;
+  border-color: whitesmoke;
+}
+
+h3 {
+  font-size: xx-large;
+  color: whitesmoke;
+}
+
+.divTodo {
+  margin: 10px;
+  background-color: #998bd2;
+  border-radius: 10px;
+  border: 1px solid whitesmoke;
+}
+
+.divText {
+  color: whitesmoke;
+  font-size: x-large;
+}
+
+.card {
+  background-color: #0b061d85;
+  border: 2px solid #373636;
+  padding: 5%;
+  border-radius: 10px;
+}
