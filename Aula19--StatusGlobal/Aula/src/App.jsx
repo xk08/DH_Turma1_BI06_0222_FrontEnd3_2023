@@ -1,9 +1,19 @@
 import "./App.css";
 import { Outlet } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 
+import { ThemeContext, themes } from "./contexts/ThemeContext.js";
+import ThemeConsumer from "./contexts/ThemeConsumer";
+
 function App() {
+
+  const [theme, setTheme] = useState(themes.light);
+
+  const handleChangeTheme = () => {
+    console.log("Filho disparou a função que troca o tema");
+    theme == themes.dark ? setTheme(themes.light) : setTheme(themes.dark);
+  };
 
   useEffect(() => {
     console.log("<App /> executou efeito colateral");
@@ -16,9 +26,16 @@ function App() {
 
     <div className="App">
 
-      {/* Deixar o Context como Provider global de App */}
-      <Header />
-      <Outlet />
+      <ThemeContext.Provider value={{ theme, handleChangeTheme }}>
+
+        <ThemeConsumer>
+          <Header />
+          <Outlet />
+        </ThemeConsumer>
+
+      </ThemeContext.Provider>
+
+
     </div>
 
   )

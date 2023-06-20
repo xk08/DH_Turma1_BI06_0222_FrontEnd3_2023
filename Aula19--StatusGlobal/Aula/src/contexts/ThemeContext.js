@@ -1,4 +1,6 @@
 
+import { createContext } from "react";
+
 const themes = {
 
     light: {
@@ -20,5 +22,6 @@ const themes = {
     }
 }
 
+const ThemeContext = createContext(themes.light);
 
-export { themes };
+export { themes, ThemeContext };

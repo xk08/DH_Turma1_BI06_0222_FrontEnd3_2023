@@ -1,6 +1,9 @@
 
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import NavBar from "./NavBar";
+
+import { ThemeContext } from "../contexts/ThemeContext";
+
 
 function Header() {
 
@@ -10,6 +13,8 @@ function Header() {
             console.log(console.log("<Header /> desmontou"));
         }
     }, []);
+
+    const { theme, handleChangeTheme } = useContext(ThemeContext);
 
     return (
         <div style={{
@@ -28,7 +33,10 @@ function Header() {
 
             <NavBar />
 
-            {/* Incluir botão para trocar o tema */}
+            <button onClick={handleChangeTheme}>Trocar tema</button>
+
+            {/*  <p className={theme.bodyTheme}>Teste tema</p> */}
+
 
         </div>
 
