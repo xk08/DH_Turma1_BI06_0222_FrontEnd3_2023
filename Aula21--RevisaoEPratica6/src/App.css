@@ -1,0 +1,70 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+button {
+  margin: 5px;
+}
+
+input {
+  font-size: large;
+  background-color: #998bd2;
+  color: whitesmoke;
+  height: 35px;
+  border-radius: 2%;
+  border-color: whitesmoke;
+}
+
+h3 {
+  font-size: large;
+  color: whitesmoke;
+}
+
+label {
+  font-size: large;
+  color: whitesmoke;
+  line-height: 1.1;
+}
+
+.divServices {
+  margin: 10px;
+  background-color: #998bd2;
+  border-radius: 10px;
+  border: 1px solid whitesmoke;
+}
+
+.divText {
+  color: whitesmoke;
+  font-size: x-large;
+}
+
+.card {
+  background-color: #0b061d85;
+  border: 2px solid #373636;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  width: 380px;
+}
+
+.serviceType {
+  color: whitesmoke;
+  font-size: xx-large;
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+
+.serviceLabel {
+  color: #454343;
+  font-size: large;
+  font-weight: 600;
+}
+
+.serviceTime {
+  color: whitesmoke;
+  font-size: xx-large;
+}
