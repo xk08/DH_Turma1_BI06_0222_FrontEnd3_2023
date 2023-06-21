@@ -1,33 +1,56 @@
 import './App.css';
-import { useState, useEffect } from 'react';
-
+import { useState, useEffect, useReducer } from 'react';
 
 function App() {
 
   const [newTodo, setNewTodo] = useState("");
 
-  /// Trocamos o useState() pelo useReducer()
-  const [todos, setTodos] = useState(
-    [
-      {
-        id: 2354345345,
-        text: "Aprender useReducer"
-      }
-    ]
-  );
+  function todoReducer(state, action) {
+
+    switch (action.type) {
+
+      case "ADD_TODO":
+        return action.payload;
+
+      case "DELETE_TODO":
+        return state.filter(todo => todo.id != action.payload);
+
+      default:
+        return state;
+    }
+
+  }
+
+  const [todos, dispatch] = useReducer(todoReducer, [
+    {
+      id: 2354345345,
+      text: "Aprender useReducer"
+    }
+  ]);
 
   useEffect(() => {
 
-    /// Buscamos se existe algum dado no Storage
+    const todos = localStorage.getItem("todos");
 
-    /// Salvamos o novo estado da lista após buscar no Storage (se existir algo)
+    if (todos) {
+
+      const todosJS = JSON.parse(todos)
+
+      dispatch(
+        {
+          type: "ADD_TODO",
+          payload: todosJS
+        }
+      );
+
+    }
 
   }, []); // Executamos 1x ao montar o componente <App />
 
 
   useEffect(() => {
-    /// Precisamos manter o Storage sempre atualizado
-  }, []);
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]); /// Executamos todas as vezes que "todos" sofrer alteração no estado
 
   const handleNewTodo = () => {
     if (newTodo.trim() !== '') {
@@ -37,9 +60,12 @@ function App() {
         text: newTodo
       };
 
-      console.log(todo);
-
-      /// Salvamos o novo item na Lista de tarefas
+      dispatch(
+        {
+          type: "ADD_TODO",
+          payload: [todo, ...todos]
+        }
+      );
 
       setNewTodo("");
 
@@ -49,8 +75,13 @@ function App() {
   };
 
   const handleRemoveTodo = (id) => {
-    console.log(id);
-    /// Removemos o item selecionado da lista de Tarefas
+
+    dispatch(
+      {
+        type: "DELETE_TODO",
+        payload: id
+      }
+    )
   };
 
 
