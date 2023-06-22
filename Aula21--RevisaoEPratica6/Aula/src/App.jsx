@@ -1,8 +1,26 @@
-import { useState } from 'react';
+import { useState, useReducer } from 'react';
 import './App.css';
 
 import Form from './components/Form';
 import ServiceCard from './components/ServiceCard';
+
+import ServiceContext from "./contexts/ServiceContext";
+
+
+
+
+function servicesReducer(state, action) {
+
+  switch (action.type) {
+
+    case "ADD_SERVICE":
+      return action.payload;
+
+    default:
+      return state;
+  }
+
+}
 
 function App() {
 
@@ -12,32 +30,35 @@ function App() {
     time: "40 minutos"
   };
 
-  /* Devemos usar o useReducer ao invés do useState */
-  const [services, setServices] = useState([serviceDefaultValues])
+  const [services, dispatch] = useReducer(servicesReducer, [serviceDefaultValues])
 
   return (
 
-    <div className='card'>
+    <ServiceContext.Provider value={{ services, dispatch }}>
 
-      <h1>Novo atendimento</h1>
+      <div className='card'>
 
-      <Form />
+        <h1>Novo atendimento</h1>
 
-      <h1>Seus atendimentos</h1>
+        <Form />
 
-      {
-        services.length > 0 ?
-          services.map(service =>
-          (
-            <ServiceCard
-              key={service.id}
-              service={service}
-            />
-          ))
-          : <h3> A lista de atendimentos está vazia</h3>
-      }
+        <h1>Seus atendimentos</h1>
 
-    </div>
+        {
+          services.length > 0 ?
+            services.map(service =>
+            (
+              <ServiceCard
+                key={service.id}
+                service={service}
+              />
+            ))
+            : <h3> A lista de atendimentos está vazia</h3>
+        }
+
+      </div>
+
+    </ServiceContext.Provider>
 
   );
 }
