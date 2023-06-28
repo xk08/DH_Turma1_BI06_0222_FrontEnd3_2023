@@ -4,7 +4,9 @@ import axios from "axios";
 import apiBaseUrl from "../api";
 
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+import useApi from "../Hooks/useApi";
 
 const LoginForm = () => {
 
@@ -16,42 +18,32 @@ const LoginForm = () => {
     }
   );
 
-  /// Estados de interação do formulário com a API
-  const [isLoginLoading, setLoginIsLoading] = useState(false);
-  const [loginError, setLoginError] = useState(null);
+  const { data, isLoading, error, shouldFetch } = useApi();
 
   /// Hook utilizado para fazer a navegação entre rotas
   const navigate = useNavigate();
+
+  useEffect(() => {
+
+    if (data && !error) {
+
+      /// Guardamos o token JWT no Storage
+      localStorage.setItem("tokenJwt", data.token);
+
+      /// Redirecionamos o usuário para a Home
+      navigate("/home");
+
+    }
+
+
+  }, [data, error, navigate]);
 
   const handleSubmit = async (e) => {
 
     e.preventDefault();
 
-    try {
+    await shouldFetch("auth", login);
 
-      setLoginIsLoading(true);
-
-      const response = await axios.post(`${apiBaseUrl}/auth`, login);
-
-      if (response.status === 200) {
-
-        /// Guardamos o token JWT no Storage
-        localStorage.setItem("tokenJwt", response.data.token);
-
-        setLoginIsLoading(false);
-        setLoginError(null);
-
-        /// Redirecionamos o usuário para a Home
-        navigate("/home");
-
-      } else {
-        throw response.data;
-      }
-
-    } catch (error) {
-      setLoginError(error);
-      setLoginIsLoading(false);
-    }
   };
 
   return (
@@ -79,9 +71,9 @@ const LoginForm = () => {
             required
           />
 
-          <p> {isLoginLoading ? "Carregando..." : ""}</p>
+          <p> {isLoading ? "Carregando..." : ""}</p>
 
-          <p> {loginError ? loginError.message : ""}</p>
+          <p> {error ? error.message : ""}</p>
 
           <button className="btn btn-primary" type="submit">
             Send
