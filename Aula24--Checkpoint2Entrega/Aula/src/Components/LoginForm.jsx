@@ -56,7 +56,7 @@ const LoginForm = () => {
     <div
 
       /* ### Adicionamos o atributo para poder testar com o JEST/RTL */
-      data-testid="login-form"
+      data-testid="form-login"
       className={`text-center card container card ${isDarkMode ? styles.cardDark : ""
         }`}
     >
