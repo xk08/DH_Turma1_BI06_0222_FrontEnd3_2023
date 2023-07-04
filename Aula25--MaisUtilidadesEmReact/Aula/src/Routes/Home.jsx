@@ -9,8 +9,13 @@ const Home = () => {
 
   useEffect(() => {
 
+    /// Execeções/Error Síncronos
+    //throw "Destruindo a aplicação...";
+
     const buscaDentistasApi = async () => {
-      await shouldFetch("dentista"); /// Sem erro assíncrono
+      /// Execeções/Error Assíncronos
+      await shouldFetch("dentistaX"); /// Sem erro assíncrono
+      // await shouldFetch("dentista"); /// Sem erro assíncrono
     }
 
     buscaDentistasApi();

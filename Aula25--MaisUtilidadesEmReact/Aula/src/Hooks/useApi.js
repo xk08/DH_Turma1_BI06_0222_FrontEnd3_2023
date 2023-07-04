@@ -2,6 +2,9 @@ import axios from "axios";
 import apiBaseUrl from "../api";
 import { useState } from "react";
 
+
+import useAsyncError from "../Errors/useAsyncError";
+
 function useApi() {
 
     /// Dados que serão obtidos via API
@@ -12,6 +15,8 @@ function useApi() {
 
     /// Controle de possiveis erros obtidos
     const [error, setError] = useState(null);
+
+    const throwError = useAsyncError();
 
     const shouldFetch = async (endpoint, postData) => {
 
@@ -40,6 +45,7 @@ function useApi() {
             setError(error);
 
             /// Chamamos o Custom Hook que atualiza o estado do erro capturado pelo ErrorBoundary
+            throwError(Error(error));
 
         } finally {
             setIsLoading(false);
