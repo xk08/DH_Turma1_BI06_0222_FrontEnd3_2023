@@ -55,7 +55,6 @@ const LoginForm = () => {
             name="password"
             value={login.password}
             onChange={(e) => setLogin({ ...login, password: e.target.value })}
-
             type="password"
             required
           />
@@ -65,7 +64,7 @@ const LoginForm = () => {
           <p> {error ? error.message : ""}</p>
 
           <button className="btn btn-primary" type="submit">
-            Send
+            Enviar
           </button>
         </form>
       </div>
